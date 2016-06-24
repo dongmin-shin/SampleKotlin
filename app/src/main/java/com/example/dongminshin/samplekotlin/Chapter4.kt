@@ -27,7 +27,7 @@ class Chapter4 : AppCompatActivity() {
 //        niceToast(length = Toast.LENGTH_LONG, message = "Oh My God!!", tag = "OMG Tag")
 //        niceToast(length = Toast.LENGTH_LONG, message = testString(), tag = "OMG Tag")
 
-//        niceBitMoreToast(message);
+        niceBitMoreToast(message);
     }
 
     private fun toast(message: String, length: Int = Toast.LENGTH_SHORT) {
@@ -41,7 +41,7 @@ class Chapter4 : AppCompatActivity() {
         // Before
 //        Toast.makeText(this, "[" + tag + "] " + message, length).show()
 
-        // After
+        // After (adopt String template)
         Toast.makeText(this, "[$tag] $message", length).show()
     }
 

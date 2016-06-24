@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SampleKotlin</string>
+
+    <string name="chapter4">Chapter4</string>
+    <string name="chapter5">Chapter5</string>
+
 </resources>

@@ -16,6 +16,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        chapter5Button.setOnClickListener {
+            var intent = Intent(applicationContext, Chapter5::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }

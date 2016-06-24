@@ -1,6 +1,7 @@
-package com.example.dongminshin.samplekotlin.chapter4
+package com.example.dongminshin.samplekotlin
 
 import org.junit.Test
+import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 /**
@@ -50,6 +51,19 @@ class KotlinTest {
     fun add_test() {
         var result = add(3, 5)
         print(result)
+    }
+
+    @Test
+    fun variable_test() {
+        // var is muable, so can assign value
+        var a = 3
+        a = 5
+
+        assertEquals(a, 5)
+
+        // val is immutable, so if assign value, see error
+//        val b = 10
+//        b = 15
     }
 
     fun print(message: String) {
