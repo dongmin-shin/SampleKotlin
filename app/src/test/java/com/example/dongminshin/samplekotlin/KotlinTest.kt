@@ -3,7 +3,9 @@ package com.example.dongminshin.samplekotlin
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import org.junit.Test
+import java.util.*
 import kotlin.test.assertEquals
+import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
 /**
@@ -20,8 +22,8 @@ class KotlinTest {
 
     class Person(name: String, surName: String) : Animal() {
 
-        var name: String
-        var surName: String
+        val name: String
+        val surName: String
 
         init {
             this.name = name
@@ -44,7 +46,8 @@ class KotlinTest {
 
     @Test
     fun person_class_test() {
-        var person = Person("Shin", "DongMin");
+        val person = Person("Shin", "DongMin");
+
         println(person.toString())
         println(person.printSpecially())
     }
@@ -55,7 +58,7 @@ class KotlinTest {
 
     @Test
     fun add_test() {
-        var result = add(3, 5)
+        val result = add(3, 5)
         println(result)
     }
 
@@ -157,6 +160,46 @@ class KotlinTest {
         val cow = Cow()
         cow.name = "Crazy Cow"
         println(cow.name)
+    }
+
+    data class Forecast(val date: Date, val temperature: Float, val details: String)
+
+    @Test
+    fun data_class_copy_test() {
+        val forecast_one = Forecast(Date(), 27.5f, "Shiny day")
+        val forecast_two = forecast_one.copy(temperature = 30f)
+
+        assertNotEquals(forecast_one, forecast_two)
+        println("One(${forecast_one.toString()}),\nTwo(${forecast_two.toString()})")
+    }
+
+    @Test
+    fun data_calss_multi_declaration_test() {
+        val forecast = Forecast(Date(), 32f, "Hot day")
+        val (a, b) = forecast
+        println("$a : $b")
+
+        val (date_m, temperature_m, details_m) = forecast
+        println("$date_m : $details_m ($temperature_m)")
+
+        val date1 = forecast.component1()
+        val temperature1 = forecast.component2()
+        val details1 = forecast.component3()
+
+        assertEquals(date_m, date1)
+        assertEquals(temperature_m, temperature1)
+        assertEquals(details_m, details1)
+    }
+
+    @Test
+    fun map_multi_declaration_test() {
+        val testMap = HashMap<Int, String>()
+        testMap.put(1, "Hello")
+        testMap.put(2, "Kotlin")
+
+        for ((key, value) in testMap) {
+            println("$key : $value")
+        }
     }
 
 }
