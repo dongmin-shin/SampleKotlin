@@ -218,8 +218,26 @@ class KotlinTest {
         for (modelForecast in forecastList) {
             println("${modelForecast.dt} : ${modelForecast.description}(${modelForecast.minTemp}/${modelForecast.maxTemp})")
         }
+    }
 
+    interface KotlinInterface {
+        fun execute()
+        fun printHello() {
+            println("Hello${KotlinInterface::class.java}")
+        }
+    }
 
+    class KotlinImplementTest() : KotlinInterface {
+        override fun execute() {
+            println("Execute${KotlinImplementTest::class.java}")
+        }
+    }
+
+    @Test
+    fun kotlin_interface_test() {
+        val test = KotlinImplementTest()
+        test.execute()
+        test.printHello()
     }
 
 }

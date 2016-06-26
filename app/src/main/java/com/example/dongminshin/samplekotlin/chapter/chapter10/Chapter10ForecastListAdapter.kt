@@ -12,7 +12,6 @@ class Chapter10ForecastListAdapter(val weekForecast: ForecastList) : RecyclerVie
 
     override fun onBindViewHolder(holder: Chapter10ViewHolder, position: Int) {
         // Typically
-
 //        val weekForecast = weekForecast.list.get(position)
 //        holder.textView.text = "${weekForecast.dt} - ${weekForecast.description} - ${weekForecast.maxTemp}/${weekForecast.minTemp}"
 

@@ -1,8 +1,6 @@
 package com.example.dongminshin.samplekotlin.openweather
 
 import com.example.dongminshin.samplekotlin.Command
-import com.example.dongminshin.samplekotlin.openweather.ForecastDataMapper
-import com.example.dongminshin.samplekotlin.openweather.ForecastRequest
 import com.example.dongminshin.samplekotlin.openweather.domain.ForecastList
 
 /**
