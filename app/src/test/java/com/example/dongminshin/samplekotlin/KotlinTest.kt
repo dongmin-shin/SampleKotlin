@@ -43,14 +43,18 @@ class KotlinTest {
     @Test
     fun person_class_test() {
         var person = Person("Shin", "DongMin");
-        print(person.toString())
-        print(person.printSpecially())
+        println(person.toString())
+        println(person.printSpecially())
+    }
+
+    fun add(x: Int, y: Int): Int {
+        return x + y
     }
 
     @Test
     fun add_test() {
         var result = add(3, 5)
-        print(result)
+        println(result)
     }
 
     @Test
@@ -66,12 +70,76 @@ class KotlinTest {
 //        b = 15
     }
 
-    fun print(message: String) {
-        System.out.println(message)
+    @Test
+    fun no_automatic_type_cast_test() {
+        // Integer to double test
+        val i: Int = 7
+        val d: Double = i.toDouble()
+
+        assertTrue(d is Double)  // Type check
+        assertEquals(d, 7.0)    // Value check
+
+        // Chatacter to integer test
+        val charValue: Char = 'c'
+        val intValue: Int = charValue.toInt()
+
+        assertTrue(intValue is Int)
+        assertEquals(intValue, 99)
     }
 
-    fun add(x: Int, y: Int): Int {
-        return x + y
+    @Test
+    fun bitwise_test() {
+        val FLAG1: Boolean = true
+        val FLAG2: Boolean = false
+
+        val bitwiseAND = FLAG1 and FLAG2
+        val bitwiseOR = FLAG1 or FLAG2
+
+        assertEquals(bitwiseAND, false)
+        assertEquals(bitwiseOR, true)
+    }
+
+    @Test
+    fun infer_type_test() {
+        val i = 12
+        val iHex = 0x0f
+        val l = 3L
+        val d = 3.5
+        val f = 3.5F
+        val s = "Example"
+
+        assertTrue(i is Int)
+
+        assertTrue(iHex is Int)
+        assertEquals(iHex, 15)
+
+        assertTrue(l is Long)
+        assertTrue(d is Double)
+        assertTrue(f is Float)
+        assertTrue(s is String)
+    }
+
+    @Test
+    fun string_iterator_test() {
+        val s = "Example"
+        for (c in s) {
+            println(c)
+        }
+    }
+
+    class Cow() {
+        var name: String = ""
+            get() = field.toUpperCase()
+            set(value) {
+                field = "Name: $value"
+            }
+    }
+
+    @Test
+    fun class_modify_setter_getter_test() {
+        val cow = Cow()
+        cow.name = "Crazy Cow"
+        println(cow.name)
     }
 
 }
