@@ -1,5 +1,7 @@
 package com.example.dongminshin.samplekotlin
 
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.uiThread
 import org.junit.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -124,6 +126,21 @@ class KotlinTest {
         val s = "Example"
         for (c in s) {
             println(c)
+        }
+    }
+
+    @Test
+    fun url_test() {
+        println(RequestForecast.instance.requestForecast())
+    }
+
+    @Test
+    fun async_test() {
+        doAsync {
+            val forecastJsonStr = RequestForecast.instance.requestForecast()
+            uiThread {
+                println(forecastJsonStr)
+            }
         }
     }
 

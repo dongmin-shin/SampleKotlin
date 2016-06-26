@@ -21,6 +21,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        chapter8Button.setOnClickListener {
+            var intent = Intent(applicationContext, Chapter8::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }
