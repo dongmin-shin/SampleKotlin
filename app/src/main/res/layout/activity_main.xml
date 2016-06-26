@@ -23,4 +23,10 @@
         android:layout_height="wrap_content"
         android:text="@string/chapter8" />
 
+    <Button
+        android:id="@+id/chapter10Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chapter10" />
+
 </LinearLayout>

@@ -1,5 +1,7 @@
 package com.example.dongminshin.samplekotlin
 
+import com.example.dongminshin.samplekotlin.openweather.RequestForecastCommand
+import com.example.dongminshin.samplekotlin.openweather.singletone.SingletoneSample
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import org.junit.Test
@@ -134,13 +136,13 @@ class KotlinTest {
 
     @Test
     fun url_test() {
-        println(RequestForecast.instance.requestForecast())
+        println(SingletoneSample.instance.getCurrentWeatherByCityName("Seoul"))
     }
 
     @Test
     fun async_test() {
         doAsync {
-            val forecastJsonStr = RequestForecast.instance.requestForecast()
+            val forecastJsonStr = SingletoneSample.instance.getCurrentWeatherByCityName("Seoul")
             uiThread {
                 println(forecastJsonStr)
             }
@@ -200,6 +202,24 @@ class KotlinTest {
         for ((key, value) in testMap) {
             println("$key : $value")
         }
+    }
+
+    @Test
+    fun request_5_day_weather_test() {
+        val forecastResult = SingletoneSample.instance.getDailyWeatherByCityName("Seoul")
+        println(forecastResult)
+    }
+
+    @Test
+    fun request_forecast_command_test() {
+        val predict5dayForecast = RequestForecastCommand("Seoul").execute()
+        val forecastList = predict5dayForecast.list
+
+        for (modelForecast in forecastList) {
+            println("${modelForecast.dt} : ${modelForecast.description}(${modelForecast.minTemp}/${modelForecast.maxTemp})")
+        }
+
+
     }
 
 }

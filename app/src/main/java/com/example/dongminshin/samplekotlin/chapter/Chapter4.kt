@@ -1,9 +1,11 @@
-package com.example.dongminshin.samplekotlin
+package com.example.dongminshin.samplekotlin.chapter
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.Toast
+import com.example.dongminshin.samplekotlin.MainActivity
+import com.example.dongminshin.samplekotlin.R
 import kotlinx.android.synthetic.main.activity_chapter4.*
 
 class Chapter4 : AppCompatActivity() {

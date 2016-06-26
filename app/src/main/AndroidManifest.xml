@@ -17,9 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Chapter4" />
-        <activity android:name=".Chapter5" />
-        <activity android:name=".Chapter8"></activity>
+        <activity android:name=".chapter.Chapter4" />
+        <activity android:name=".chapter.chapter5.Chapter5" />
+        <activity android:name=".chapter.Chapter8" />
+        <activity android:name=".chapter.chapter10.Chapter10"></activity>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dongminshin.samplekotlin.Chapter5">
+    tools:context=".chapter.chapter5.Chapter5">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/forecast_list"

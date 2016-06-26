@@ -1,7 +1,9 @@
-package com.example.dongminshin.samplekotlin
+package com.example.dongminshin.samplekotlin.chapter
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.example.dongminshin.samplekotlin.R
+import com.example.dongminshin.samplekotlin.openweather.singletone.SingletoneSample
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.uiThread
@@ -22,7 +24,7 @@ class Chapter8 : AppCompatActivity() {
         // Async with Java executor
         val executor = Executors.newScheduledThreadPool(4)
         doAsync(executorService = executor) {
-            val forecastJsonStr = RequestForecast.instance.requestForecast()
+            val forecastJsonStr = SingletoneSample.instance.getCurrentWeatherByCityName("Seoul")
             uiThread { longToast(forecastJsonStr) }
         }
 
