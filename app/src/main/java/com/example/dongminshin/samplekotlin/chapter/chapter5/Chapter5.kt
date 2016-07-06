@@ -3,7 +3,6 @@ package com.example.dongminshin.samplekotlin.chapter.chapter5
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import com.example.dongminshin.samplekotlin.chapter.chapter5.Chapter5ForecastListAdapter
 import com.example.dongminshin.samplekotlin.R
 import kotlinx.android.synthetic.main.activity_chapter5.*
 

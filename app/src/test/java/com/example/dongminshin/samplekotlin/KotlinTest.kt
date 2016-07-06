@@ -54,16 +54,6 @@ class KotlinTest {
         println(person.printSpecially())
     }
 
-    fun add(x: Int, y: Int): Int {
-        return x + y
-    }
-
-    @Test
-    fun add_test() {
-        val result = add(3, 5)
-        println(result)
-    }
-
     @Test
     fun variable_test() {
         // var is muable, so can assign value
