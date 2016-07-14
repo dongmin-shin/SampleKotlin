@@ -69,6 +69,15 @@ class KotlinClassTest {
         override abstract fun e()
     }
 
+    abstract class KotlinAbstractB : KotlinOpen() {
+        override fun c() {
+            super.c()
+            println("override c() call by ${KotlinAbstract::class.java}")
+        }
+
+        override abstract fun e()
+    }
+
     class KotlinExtendsAbstractClass : KotlinAbstract() {
         override fun e() {
             println("override e() call by ${KotlinExtendsAbstractClass::class.java}")

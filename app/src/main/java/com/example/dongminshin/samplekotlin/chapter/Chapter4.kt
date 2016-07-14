@@ -26,10 +26,11 @@ class Chapter4 : AppCompatActivity() {
 //        niceToast(message.text.toString(), "MyTag", Toast.LENGTH_LONG)
 
         // 메소드 파라메터의 위치와 상관 없이 직접 파라메터 이름을 지정하여 사용할 수 있다.
-//        niceToast(length = Toast.LENGTH_LONG, message = "Oh My God!!", tag = "OMG Tag")
+        niceToast(length = Toast.LENGTH_LONG, message = message.text.toString(), tag = "OMG Tag")
 //        niceToast(length = Toast.LENGTH_LONG, message = testString(), tag = "OMG Tag")
 
         niceBitMoreToast(message);
+
     }
 
     private fun toast(message: String, length: Int = Toast.LENGTH_SHORT) {
